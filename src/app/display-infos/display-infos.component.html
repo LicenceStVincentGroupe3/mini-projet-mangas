@@ -1,0 +1,28 @@
+<p>
+  display-infos works!
+</p>
+<div *ngIf="isLoaded;else inProgressContent">
+	<h1>Ma todolist :</h1>
+	<p>{{ todoList.title }}</p>
+	<p>{{ todoList.id }}</p>
+</div>
+
+<h2>Informations de l'utilisateur : </h2>
+<ul style="list-style: none">
+	<li>Nom: {{ user.lastName }}</li>
+	<li>Prénom: {{ user.firstName }}</li>
+</ul>
+
+<ng-template #inProgressContent>
+	<img width="120px" src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif">
+</ng-template>
+	
+<input #playlist>
+	<button (click)="addPlaylist(playlist.value)">Ajouter à ma playlist</button>
+
+<ul>
+  <li *ngFor="let playlist of playlists">{{ playlist }}</li>
+</ul>
+<input name="username" id="username" [(ngModel)]="username">
+{{ username }}
+<img [src] = "imgsrc">
