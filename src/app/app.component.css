@@ -1,0 +1,35 @@
+footer {
+  background-color: #63605C;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+footer p {
+  color: #A8A8A7;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+h1, h2 {
+  font-weight: bold;
+  color: #FF7800;
+}
+
+p {
+  color: #FF8000;
+}
+
+.top-page {
+  background-image: url("../assets/img/background-home.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.top-page-mangas, .top-page-animes {
+  margin-top: 15%;
+  font-size: 350%;
+}
