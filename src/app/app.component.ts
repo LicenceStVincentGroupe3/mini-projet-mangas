@@ -6,10 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'mini-projet-mangas';
-
-user = {
-	lastName:"Popyk",
-	firstName:"Dylan"
-	} 
+  title = 'ManA';
+  user = {
+    firstName: 'Gradi',
+    lastName: 'Mandambu'
+  };
 }
