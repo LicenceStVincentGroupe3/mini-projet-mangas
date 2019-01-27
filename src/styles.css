@@ -2,3 +2,20 @@ body {
   margin: 0;
   background-color: #FC8B19B0;
 }
+
+section {
+  padding: 35px;
+}
+h1, h2, h3, p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1, h2 {
+  font-weight: bold;
+  color: #FF7800;
+}
+
+p {
+  color: #ff5400;
+}

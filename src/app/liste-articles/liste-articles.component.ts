@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListeArticlesComponent implements OnInit {
 
+  imageLogo = "../assets/img/logo-site.png";
+
   constructor() { }
 
   ngOnInit() {

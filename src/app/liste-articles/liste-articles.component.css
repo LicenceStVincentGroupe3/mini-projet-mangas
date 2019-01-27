@@ -1,0 +1,24 @@
+span {
+  display: block;
+  padding-top: 20px;
+}
+a {
+  text-decoration: none;
+  color: #ff5400;
+}
+
+img {
+  width: 240px;
+  height: 175px;
+  border-radius: 46px;
+}
+
+.article {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/** On sépare les liens de pagination de la liste des articles **/
+.ma-pagination {
+  padding: 50px 0px 10px 0px;
+}

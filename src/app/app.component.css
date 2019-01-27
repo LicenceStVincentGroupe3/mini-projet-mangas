@@ -9,17 +9,8 @@ footer p {
   color: #A8A8A7;
 }
 
-h1, h2, h3, p {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-h1, h2 {
-  font-weight: bold;
-  color: #FF7800;
-}
-
-p {
-  color: #FF8000;
+.menu, .top-page {
+  padding: 0;
 }
 
 .top-page {

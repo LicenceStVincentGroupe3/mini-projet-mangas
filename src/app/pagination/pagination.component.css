@@ -1,0 +1,27 @@
+a {
+  padding: 0px 10px 0px 10px;
+  background-color: #f38d26cc;
+  text-decoration: none;
+  color: #63605cc2;
+  border-radius: 7px;
+}
+
+a:hover {
+  background-color: #fc6019f5;
+}
+
+/** Place les liens à droite **/
+.ma-pagination-liens {
+  float: right;
+  display: flex;
+  justify-content: space-evenly;
+  width: 35%;
+}
+
+.clear {
+  clear: right; /** Clear le "float: right;" **/
+}
+
+.active {
+  background-color: #fc6019f5;
+}
