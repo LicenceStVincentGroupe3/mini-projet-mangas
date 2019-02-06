@@ -12,10 +12,11 @@
   </div>
 </section>
 
-<!--<router-outlet></router-outlet>-->
+<!-- <a [routerLink]="['/wiki', channel.id]" class="btn btn-default">Wiki du site</a> -->
+
 
 <section>
-  <!-- <app-display-infos [user]="user"></app-display-infos> --><app-liste-articles></app-liste-articles>
+  <router-outlet></router-outlet> <!-- <app-display-infos [utilisateur]="uti" (deconnecté)="seDeco($event)"></app-display-infos> <app-liste-articles></app-liste-articles> -->
 </section>
 
 <!-- Footer -->

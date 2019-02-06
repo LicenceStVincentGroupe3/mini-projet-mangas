@@ -7,11 +7,24 @@
 	<p>{{ todoList.id }}</p>
 </div>
 
+
+<!-------------------------------------->
+<!-- Récupération d'une donnée venant du composent parent -->
 <h2>Informations de l'utilisateur : </h2>
 <ul style="list-style: none">
-	<li>Nom: {{ user.lastName }}</li>
-	<li>Prénom: {{ user.firstName }}</li>
+	<li>Nom: {{ utilisateur.ndf }}</li>
+	<li>Prénom: {{ utilisateur.prenom }}</li>
 </ul>
+
+<!------------>
+
+<!-- Envoi d'une donnée au composant parent -->
+<div>
+  <label for="deconnexion">Se déconnecter</label>
+  <input type="radio" id="deconnexion" (change)="deconnexion(this.value)">
+</div>
+<!-------------------------------------->
+
 
 <ng-template #inProgressContent>
 	<img width="120px" src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif">
@@ -26,3 +39,10 @@
 <input name="username" id="username" [(ngModel)]="username">
 {{ username }}
 <img [src] = "imgsrc">
+
+
+<input id="name" name="name" class="form-control" required minlength="4" [(ngModel)]="uti.ndf" #milboz="ngModel">
+<div *ngIf="milboz.invalid && (milboz.dirty || milboz.touched)" class="alert alert-danger">
+  <div *ngIf="milboz.errors.required">Name is required.</div>
+  <div *ngIf="milboz.errors.minlength">Name must be at least 4 characters long.</div>
+</div>
