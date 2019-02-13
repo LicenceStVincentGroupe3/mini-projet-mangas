@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light BG-LIGHT navbar-default navbar-fixed-top" id="myScrollspy">
   <!-- Logo du site -->
   <a class="collapse navbar-collapse" href="#">
-    <img class="border rounded-circle border-danger" [src] = "imageLogo" alt="">
+    <img class="border rounded-circle border-danger" [src] = "imageLogo" alt="" routerLink="/" routerLinkActive="active">
   </a>
 
   <!-- Bouton apparaissant lorsque la taille de l'écran de vient trop petite -->
@@ -12,8 +12,8 @@
   <!-- Liens de naviguation -->
   <div id="navbar" class="collapse navbar-collapse" id="navbarSupportedContent" data-role="navbar">
     <ul class="mr-auto nav navbar-right">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Actualité manga <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/wiki" routerLinkActive="active">Actualité manga <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item ui-btn-active">
         <a class="nav-link" href="#">Actualité anime</a>
@@ -22,10 +22,10 @@
         <a class="nav-link" href="#">Actualité film animation</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Manga</a>
+        <a class="nav-link" routerLink="/display-infos" routerLinkActive="active">Manga</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Anime</a>
+        <a class="nav-link" routerLink="/traitement-articles" routerLinkActive="active">Anime</a>
       </li>
     </ul>
 

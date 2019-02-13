@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TodoListApiService} from './todo-list-api.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ManA';
   user = {
-    firstName: 'Gradi',
-    lastName: 'Mandambu'
+    firstName: 'Dylan',
+    lastName: 'Popyk'
   };
+  onDisconnect(disconnected: boolean) {
+    console.log(disconnected);
+  }
+
+  onSendArticle(articleAdded: any) {
+    console.log(articleAdded);
+  }
 }
+

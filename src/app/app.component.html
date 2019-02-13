@@ -12,10 +12,19 @@
   </div>
 </section>
 
-<!--<router-outlet></router-outlet>-->
+<!--
+<nav>
+  <a routerLink="/" routerLinkActive="active">Accueil</a>
+  <a routerLink="/wiki" routerLinkActive="active">Wiki du site</a>
+</nav>
+-->
+
+<!-- <a [routerLink]="['/slack/channels', channel.id]" class="btn btn-default">Retour au channel</a> -->
+
+
 
 <section>
-  <!-- <app-display-infos [user]="user"></app-display-infos> --><app-liste-articles></app-liste-articles>
+  <router-outlet></router-outlet>
 </section>
 
 <!-- Footer -->

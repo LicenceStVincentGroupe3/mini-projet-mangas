@@ -25,4 +25,14 @@
 </ul>
 <input name="username" id="username" [(ngModel)]="username">
 {{ username }}
-<img [src] = "imgsrc">
+<!-- <img [src] = "imgsrc"> -->
+
+<label for="disconnect">Se déconnecter</label>
+<input type="radio" id="disconnect" (change)="disconnect(this.value)">
+
+<input id="name" name="name" class="form-control" required minlength="4" [(ngModel)]="user.lastName" #name="ngModel">
+
+<div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+  <div *ngIf="name.errors.required">Name is required.</div>
+  <div *ngIf="name.errors.minlength">Name must be at least 4 characters long.</div>
+</div>

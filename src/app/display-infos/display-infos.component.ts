@@ -1,36 +1,57 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {TodoListApiService} from '../todo-list-api.service';
+import {TodoList} from '../../model/TodoList';
 
 @Component({
   selector: 'app-display-infos',
   templateUrl: './display-infos.component.html',
-  styleUrls: ['./display-infos.component.css']
+  styleUrls: ['./display-infos.component.css'],
+  providers: [TodoListApiService]
 })
 export class DisplayInfosComponent implements OnInit {
 
-  @Input() user: object;
+  private _user;
+
+  @Output() disconnected = new EventEmitter<boolean>();
+
   imagesrc = 'https://www.papillesetpupilles.fr/wp-content/uploads/2016/09/Poulet-a-la-courge-butternut.jpg';
   username: string;
   playlists = ['Année 2000', 'Année 90', 'Juste pour rire', 'Top 2018'];
-  todoList: object;
+  todoList: TodoList;
   isLoaded = false;
 
-  constructor(private http: HttpClient) {
-    this.username = 'Gradi';
+  disconnect() {
+    this.disconnected.emit(true);
+    console.log('toto');
+  }
+
+  @Input()
+  set user(user: object) {
+  this._user = user;
+  }
+
+  get user() {
+    return this._user;
+  }
+
+  constructor(private todoListApiService: TodoListApiService) {
   }
 
   ngOnInit() {
-    this.http
-      .get('https://jsonplaceholder.typicode.com/todos/1')
-      .subscribe(
-        data => {
-          this.todoList = data;
-          this.isLoaded = true;
-        },
-        error => {
-          console.log(error);
-        }
-      );
+    const response = this.todoListApiService.retrieve(1);
+    response.subscribe(
+      (data: TodoList) => {
+        this.todoList = data;
+        this.isLoaded = true;
+      },
+      error => {
+        console.log(error);
+      },
+      () => {
+        console.log('on complete');
+      }
+    );
   }
 
   addPlaylist(playlist: string) {

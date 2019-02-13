@@ -9,6 +9,7 @@ a:hover {
 a img {
   width: 90px;
   height:80px;
+  text-decoration: none;
 }
 
 /** Fixation du menu au sommet de l'écran **/
@@ -22,7 +23,7 @@ a img {
 }
 
 /** !lorsque l'on se situe sur une page, le lien du menu correspondant devient rouge **/
-.active > .nav-link {
+.active {
   color: #ff3d00;
 }
 

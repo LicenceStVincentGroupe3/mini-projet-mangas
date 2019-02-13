@@ -10,6 +10,19 @@ import { BarreRechercheComponent } from './barre-recherche/barre-recherche.compo
 import { ListeArticlesComponent } from './liste-articles/liste-articles.component';
 import { MenuComponent } from './menu/menu.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { TodoListApiService } from './todo-list-api.service';
+import {RouterModule, Routes} from '@angular/router';
+import { WikiComponent } from './wiki/wiki.component';
+import { ContenuArticleComponent } from './contenu-article/contenu-article.component';
+import { TraitementArticlesComponent } from './traitement-articles/traitement-articles.component';
+
+const appRoutes: Routes = [
+  {path: 'wiki', component: WikiComponent },
+  {path: '', component: ListeArticlesComponent },
+  {path: 'contenu-article', component: ContenuArticleComponent },
+  {path: 'display-infos', component: DisplayInfosComponent },
+  {path: 'traitement-articles', component: TraitementArticlesComponent }
+];
 
 @NgModule({
   declarations: [
@@ -18,13 +31,17 @@ import { PaginationComponent } from './pagination/pagination.component';
     BarreRechercheComponent,
     ListeArticlesComponent,
     MenuComponent,
-    PaginationComponent
+    PaginationComponent,
+    WikiComponent,
+    ContenuArticleComponent,
+    TraitementArticlesComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes, {enableTracing: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
