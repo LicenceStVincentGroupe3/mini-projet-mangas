@@ -15,7 +15,7 @@ export class ContenuArticleComponent implements OnInit {
   listeDesVideos: ListVideos;
   isLoaded = false;
 
-  // Récupération d'une donnée venant du composent parent
+  // Récupération d'une donnée venant du composant parent
   private _article;
 
   @Input()
@@ -24,7 +24,7 @@ export class ContenuArticleComponent implements OnInit {
 
   // urlSafe: SafeResourceUrl;
 
-  // Récupération d'une donnée venant du composent parent
+  // Récupération d'une donnée venant du composant parent
   // -----------------
   @Input()
   set article(article: any) {

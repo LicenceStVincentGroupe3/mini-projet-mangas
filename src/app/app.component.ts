@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'ManA';
   user = {
     firstName: 'Dylan',
-    lastName: 'Popyk'
+    lastName: 'Noally'
   };
   onDisconnect(disconnected: boolean) {
     console.log(disconnected);
@@ -19,5 +19,7 @@ export class AppComponent {
   onSendArticle(articleAdded: any) {
     console.log(articleAdded);
   }
+
+
 }
 
