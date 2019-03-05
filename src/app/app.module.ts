@@ -12,18 +12,36 @@ import { MenuComponent } from './menu/menu.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { TodoListApiService } from './todo-list-api.service';
 import {RouterModule, Routes} from '@angular/router';
-import { WikiComponent } from './wiki/wiki.component';
 import { ContenuArticleComponent } from './contenu-article/contenu-article.component';
 import { TraitementArticlesComponent } from './traitement-articles/traitement-articles.component';
 import { AjoutPlaylistComponent } from './ajout-playlist/ajout-playlist.component';
+import {
+    GoogleApiModule, 
+    GoogleApiService, 
+    GoogleAuthService, 
+    NgGapiClientConfig, 
+    NG_GAPI_CONFIG,
+    GoogleApiConfig
+} from "ng-gapi";
+
+import { UserService } from './user-service.service';
 
 const appRoutes: Routes = [
-  {path: 'wiki', component: WikiComponent },
   {path: '', component: ListeArticlesComponent },
   {path: 'contenu-article', component: ContenuArticleComponent },
   {path: 'display-infos', component: DisplayInfosComponent },
   {path: 'traitement-articles', component: TraitementArticlesComponent }
 ];
+
+let gapiClientConfig: NgGapiClientConfig = {
+    client_id: "36337314593-ujdd857mrvmlt2k3qg1vc72fkn4289d0.apps.googleusercontent.com",
+    discoveryDocs: ["https://analyticsreporting.googleapis.com/$discovery/rest?version=v4"],
+    ux_mode: "redirect",
+    redirect_uri: "http://localhost:4200",
+    scope: [
+        "https://www.googleapis.com/auth/userinfo.profile"
+    ].join(" ")
+};
 
 @NgModule({
   declarations: [
@@ -33,7 +51,6 @@ const appRoutes: Routes = [
     ListeArticlesComponent,
     MenuComponent,
     PaginationComponent,
-    WikiComponent,
     ContenuArticleComponent,
     TraitementArticlesComponent,
     AjoutPlaylistComponent
@@ -43,9 +60,13 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
+    GoogleApiModule.forRoot({
+      provide: NG_GAPI_CONFIG,
+      useValue: gapiClientConfig
+    }),
     RouterModule.forRoot(appRoutes, {enableTracing: true })
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

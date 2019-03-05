@@ -23,6 +23,13 @@
 
 <app-ajout-playlist></app-ajout-playlist>
 
+
+<button *ngIf='!isLoggedIn()' (click)="signIn()">sign in</button>
+
+<div *ngIf='isLoggedIn()'> 
+  
+</div>
+
 <section>
   <router-outlet></router-outlet>
 </section>

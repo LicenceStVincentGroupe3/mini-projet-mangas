@@ -9,7 +9,9 @@ export class AjoutPlaylistComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() 
+  {
 
+  	
+  }
 }
