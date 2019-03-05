@@ -1,5 +1,4 @@
 <input id="ajout" name="ajout" onchange="localStorage.ajout=this.value" #ajoutVideo>
 
-<textarea id="description" name="description" onchange="localStorage.description=this.value" #descriptionVideo>Description</textarea>
+<button (click)="addArticle(ajoutVideo.value, descriptionVideo.value)" (change)="EnvoiArticle(this.value)">Recherche</button>
 
-<button (click)="addArticle(ajoutVideo.value, descriptionVideo.value)" (change)="EnvoiArticle(this.value)">Ajout d'un article</button>

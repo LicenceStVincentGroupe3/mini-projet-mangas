@@ -15,6 +15,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { WikiComponent } from './wiki/wiki.component';
 import { ContenuArticleComponent } from './contenu-article/contenu-article.component';
 import { TraitementArticlesComponent } from './traitement-articles/traitement-articles.component';
+import { TraitementArticlesDirective } from './traitement-articles.directive';
 
 const appRoutes: Routes = [
   {path: 'wiki', component: WikiComponent },
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     PaginationComponent,
     WikiComponent,
     ContenuArticleComponent,
-    TraitementArticlesComponent
+    TraitementArticlesComponent,
+    TraitementArticlesDirective,
   ],
   imports: [
     BrowserModule,
