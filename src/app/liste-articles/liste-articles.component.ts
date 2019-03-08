@@ -1,17 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { YoutubePlayerService } from '../shared/services/youtube-player.service';
+import { PlaylistStoreService } from '../shared/services/playlist-store.service';
 
 @Component({
   selector: 'app-liste-articles',
   templateUrl: './liste-articles.component.html',
   styleUrls: ['./liste-articles.component.css']
 })
-export class ListeArticlesComponent implements OnInit {
+export class ListeArticlesComponent {
 
-  imageLogo = "../assets/img/logo-site.png";
+  @Input() videoList;
+  @Input() loadingInProgress;
+  @Output() videoPlaylist = new EventEmitter();
 
-  constructor() { }
+  constructor(
+    private youtubePlayer: YoutubePlayerService,
+    private playlistService: PlaylistStoreService
+  ) { }
 
-  ngOnInit() {
+  play(video: any): void {
+    this.youtubePlayer.playVideo(video.id, video.snippet.title);
+    this.addToPlaylist(video);
   }
+
+  addToPlaylist(video: any): void {
+    this.videoPlaylist.emit(video);
+  }
+
+
 
 }

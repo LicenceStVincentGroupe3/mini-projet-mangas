@@ -25,3 +25,26 @@ a:hover {
 .active {
   background-color: #fc6019f5;
 }
+
+@media screen and (max-width: 993px) {
+  .pages {
+    display: flex;
+    justify-content: center;
+  }
+  .ma-pagination-liens {
+    float: none;
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .ma-pagination-liens {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 481px) {
+  .ma-pagination-liens {
+    width: 100%;
+  }
+}
