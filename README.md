@@ -1,7 +1,7 @@
 # English version
 ## Table of contents
 * [General info](#general-info)
-* [Technologies / Tools](#technologies-/-tools)
+* [Technologies / Tools](#technologies--tools)
 * [Setup](#setup)
 
 ## General info
