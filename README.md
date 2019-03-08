@@ -66,7 +66,7 @@ You can consult the angular documentation : https://angular.io/guide/quickstart
 
 # Version Francaise
 ## Table des matières
-* [Informations générales](#information-générales)
+* [Informations générales](#informations-générales)
 * [Technologies](#technologies)
 * [Installation](#installation)
 
