@@ -64,7 +64,7 @@ If, as a result of this command, the browser does not automatically open, go to 
 ## Documentation
 You can consult the angular documentation : https://angular.io/guide/quickstart
 
-#Version Francaise
+# Version Francaise
 ## Table des matières
 * [Informations générales](#information-générales)
 * [Technologies](#technologies)
