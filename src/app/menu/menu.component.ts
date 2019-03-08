@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     // Animation de menu lorsqu'en  faisant un sroll en qui quitte le sommet de la page
     $(function(){
-      var navbar = $('.navbar');
+      let navbar = $('.navbar');
 
       $(window).scroll(function(){
         if($(window).scrollTop() <= 40){

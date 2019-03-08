@@ -22,7 +22,7 @@ a img {
 }
 
 /** !lorsque l'on se situe sur une page, le lien du menu correspondant devient rouge **/
-.active > .nav-link {
+.active{
   color: #ff3d00;
 }
 

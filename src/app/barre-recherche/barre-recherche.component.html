@@ -1,8 +1,9 @@
-<div class="container h-100">
-  <div class="d-flex justify-content-center h-100">
-    <div class="searchbar">
-      <input class="search-input" type="text" name="" placeholder="Rechercher">
-      <a href="#" class="search-icon"><i class="fa fa-search"></i></a>
-    </div>
+<form [formGroup]="searchForm" (ngSubmit)="doSearch($event)">
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" formControlName="query" type="text" id="query" placeholder="Recherche" autocomplete="off">
+    <label class="mdl-textfield__label" for="query"></label>
   </div>
-</div>
+  <button type="submit" class="mdl-button mdl-js-button mdl-button--icon">
+    <i class="material-icons">search</i>
+  </button>
+</form>
