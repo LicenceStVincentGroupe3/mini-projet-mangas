@@ -1,7 +1,7 @@
 # English version
 ## Table of contents
 * [General info](#general-info)
-* [Technologies](#technologies)
+* [Technologies / Tools](#technologies-/-tools)
 * [Setup](#setup)
 
 ## General info
@@ -18,7 +18,7 @@ MANDAMBU Gradi,
 POPYK Dylan,
 NOALLY Dylan
 	
-## Technologies
+## Technologies / Tools
 Project is created with:
 * Angular version: 7.2
 * NodeJS version: 8.9
@@ -67,7 +67,7 @@ You can consult the angular documentation : https://angular.io/guide/quickstart
 # Version Francaise
 ## Table des matières
 * [Informations générales](#informations-générales)
-* [Technologies](#technologies)
+* [Technologies / Outils](#technologies-/-outils)
 * [Installation](#installation)
 
 ## Informations générales
@@ -81,7 +81,7 @@ Ce projet vise à afficher une liste de vidéos Youtube avec la possibilité d�
 
 Ce projet a été réalisé par un groupe de 3 membres: MANDAMBU Gradi, POPYK Dylan, NOALLY Dylan
 
-## Technologies
+## Technologies / Outils
 Les technologies utilisées durant le projet sont:
 * Angular version: 7.2
 * NodeJS version: 8.9
