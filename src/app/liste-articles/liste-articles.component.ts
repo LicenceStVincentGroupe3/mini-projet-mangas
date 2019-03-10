@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { YoutubePlayerService } from '../shared/services/youtube-player.service';
-import { PlaylistStoreService } from '../shared/services/playlist-store.service';
 
 @Component({
   selector: 'app-liste-articles',
@@ -14,8 +13,7 @@ export class ListeArticlesComponent {
   @Output() videoPlaylist = new EventEmitter();
 
   constructor(
-    private youtubePlayer: YoutubePlayerService,
-    private playlistService: PlaylistStoreService
+    private youtubePlayer: YoutubePlayerService
   ) { }
 
   play(video: any): void {
@@ -26,7 +24,4 @@ export class ListeArticlesComponent {
   addToPlaylist(video: any): void {
     this.videoPlaylist.emit(video);
   }
-
-
-
 }

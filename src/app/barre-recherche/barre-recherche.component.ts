@@ -1,8 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { YoutubeApiService } from '../shared/services/youtube-api.service';
-import { YoutubePlayerService } from '../shared/services/youtube-player.service';
-import { NotificationService } from '../shared/services/notification.service';
 
 @Component({
   selector: 'app-barre-recherche',
@@ -22,17 +20,16 @@ export class BarreRechercheComponent {
 
   constructor(
     public fb: FormBuilder,
-    private youtubeService: YoutubeApiService,
-    private youtubePlayer: YoutubePlayerService,
-    private notificationService: NotificationService
+    private youtubeService: YoutubeApiService
   ) {
     this.youtubeService.searchVideos('')
       .then(data => {
-        this.videosUpdated.emit(data);
+        this.videosUpdated.emit(data); // Envoi des données vers le composent parent
       })
   }
 
   doSearch(event): void {
+    // S'il y a une recherche en cours ou si aucune recherche n'a été éffectuée
     if (this.loadingInProgress ||
       (this.searchForm.value.query.trim().length === 0) ||
       (this.last_search && this.last_search === this.searchForm.value.query)) {
@@ -44,9 +41,6 @@ export class BarreRechercheComponent {
 
     this.youtubeService.searchVideos(this.last_search)
       .then(data => {
-        if (data.length < 1) {
-          this.notificationService.showNotification('No matches found.');
-        }
         this.videosUpdated.emit(data);
       })
   }

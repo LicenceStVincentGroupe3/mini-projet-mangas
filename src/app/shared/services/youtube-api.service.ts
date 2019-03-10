@@ -2,10 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Response } from '@angular/http';
 import {map} from "rxjs/operators";
-import {Observable} from "rxjs";
-import { NotificationService } from './notification.service';
 import { YOUTUBE_API_KEY } from '../constants';
-import {ListVideos} from "../../../model/ListVideos";
 
 @Injectable()
 export class YoutubeApiService {
@@ -17,8 +14,7 @@ export class YoutubeApiService {
   public lastQuery: string;
 
   constructor(
-    private httpClient: HttpClient,
-    private notificationService: NotificationService
+    private httpClient: HttpClient
   ) { }
 
   searchVideos(query: string): Promise<any> {
@@ -31,26 +27,6 @@ export class YoutubeApiService {
         this.lastQuery = query;
         this.nextToken = jsonRes['nextPageToken'] ? jsonRes['nextPageToken'] : undefined;
 
-        let ids = [];
-
-        res.forEach((item) => {
-          ids.push(item.id.videoId);
-        });
-
-        return this.getVideos(ids);
-      }))
-      .toPromise()
-      .catch(this.handleError)
-  }
-
-  searchNext(): Promise<any> {
-    const url = `${this.base_url}search?q=${this.lastQuery}&pageToken=${this.nextToken}&maxResults=${this.max_results}&type=video&part=snippet,id&key=${YOUTUBE_API_KEY}&videoEmbeddable=true`; // tslint:disable-line
-
-    return this.httpClient.get(url)
-      .pipe(map(response => {
-        let jsonRes = response;
-        let res = jsonRes['items'];
-        this.nextToken = jsonRes['nextPageToken'] ? jsonRes['nextPageToken'] : undefined;
         let ids = [];
 
         res.forEach((item) => {
@@ -90,7 +66,6 @@ export class YoutubeApiService {
       errMsg = error.message ? error.message : error.toString();
     }
 
-    this.notificationService.showNotification(errMsg);
     return Promise.reject(errMsg);
   }
 }

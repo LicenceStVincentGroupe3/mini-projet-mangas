@@ -20,7 +20,6 @@
   width: 25%;
   max-width: 25%;
   z-index: 993;
-  height: calc(100% - 114px);
   box-shadow: none;
 }
 
@@ -102,6 +101,12 @@
   .playlist.opened {
     width: 40%;
     max-width: 40%;
+  }
+}
+
+@media (max-width: 991px) {
+  .playlist.opened {
+    top: calc(0px + 56px);
   }
 }
 
