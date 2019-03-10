@@ -1,10 +1,9 @@
-<!-- Menu + Barre de recherche -->
+<!-- Barre de recherche -->
 <section class="menu">
-  <!--<app-menu-site></app-menu-site>-->
   <!-- Barre de recherche -->
   <nav class="navbar navbar-expand-lg navbar-light BG-LIGHT navbar-default navbar-fixed-top" id="myScrollspy">
     <!-- Logo du site -->
-    <a class="collapse navbar-collapse" routerLink="/">
+    <a class="collapse navbar-collapse" href="">
       <img class="border rounded-circle border-danger" [src] = "imageLogo" alt="">
     </a>
 
@@ -13,7 +12,6 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Liens de naviguation -->
     <div id="navbar" class="collapse navbar-collapse" id="navbarSupportedContent" data-role="navbar">
       <app-barre-recherche (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress">
       </app-barre-recherche>
@@ -33,11 +31,10 @@
   </div>
 </section>
 
-<!-- <a [routerLink]="['/wiki', channel.id]" class="btn btn-default">Wiki du site</a> -->
-<app-videos-playlist [repeat]="repeat" [shuffle]="shuffle" [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist">
+<app-videos-playlist [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist">
 </app-videos-playlist>
 
-<section class="mdl-layout__content" appLazyScroll (OnScrollMethod)="searchMore()" ScrollDistance="3">
+<section class="mdl-layout__content">
   <h2 class="list-title">Bon visionnage</h2>
   <div class="page-content" [ngClass]="{'blur-main-playlist-opened': playlistToggle}">
     <app-liste-articles *ngIf="videoList.length" class="mdl-grid" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList" [loadingInProgress]="loadingInProgress">
@@ -46,7 +43,6 @@
       <div class="loading"></div>
     </div>
   </div>
-  <!-- <router-outlet></router-outlet> <app-display-infos [utilisateur]="uti" (deconnecté)="seDeco($event)"></app-display-infos> <app-liste-articles></app-liste-articles> -->
 </section>
 
 <app-video-player>
