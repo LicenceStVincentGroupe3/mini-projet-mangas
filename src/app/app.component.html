@@ -24,10 +24,10 @@
 <app-ajout-playlist></app-ajout-playlist>
 
 
-<button *ngIf='!isLoggedIn()' (click)="signIn()">sign in</button>
 
-<div *ngIf='isLoggedIn()'> 
-  
+
+<div *ngIf='!isLoggedIn()'> 
+  <button *ngIf='!isLoggedIn()' (click)="signIn()">Connexion</button>
 </div>
 
 <section>
