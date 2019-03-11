@@ -24,6 +24,12 @@ footer p {
   height: 100vh;
 }
 
+#user {
+  margin-left: 280px;
+  color: rgb(255, 120, 0);
+  cursor: pointer;
+}
+
 .top-page-mangas, .top-page-animes {
   margin-top: 15%;
   font-size: 350%;
@@ -140,4 +146,9 @@ a img {
   .mdl-layout__content {
     width: 100%;
   }
+  #user { 
+    float: none;
+    color: #7e5730;
+  }
 }
+

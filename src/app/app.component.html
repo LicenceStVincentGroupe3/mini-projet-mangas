@@ -16,6 +16,9 @@
       <app-search-bar (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress">
       </app-search-bar>
     </div>
+    <div id="user" *ngIf='!isLoggedIn()'> 
+      <i class="fas fa-user" *ngIf='!isLoggedIn()' (click)="signIn()"></i>
+    </div>
     <div id="btnPlaylistToggle" aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button toggle-playlist-icon" (click)="togglePlaylist()">
       <i class="material-icons"></i>
     </div>

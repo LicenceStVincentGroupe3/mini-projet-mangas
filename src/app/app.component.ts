@@ -3,6 +3,9 @@ import { YoutubeApiService } from './shared/services/youtube-api.service';
 import { YoutubePlayerService } from './shared/services/youtube-player.service';
 import { PlaylistStoreService } from './shared/services/playlist-store.service';
 import * as $ from 'jquery';
+import { GoogleAuthService } from 'ng-gapi';
+import { UserService } from './user-service.service';
+import { GoogleApiService } from 'ng-gapi';
 
 @Component({
   selector: 'app-root',
@@ -19,11 +22,20 @@ export class AppComponent implements OnInit, AfterViewInit {
   public playlistNames = false;
   public playlistElement: any;
 
+  public sheetId: string;
+  public sheet: any;
+  public foundSheet: any;
+
   constructor(
     private youtubeService: YoutubeApiService,
     private youtubePlayer: YoutubePlayerService,
-    private playlistService: PlaylistStoreService
+    private playlistService: PlaylistStoreService,
+    private userService: UserService,
+    private authService: GoogleAuthService,
+    private gapiService: GoogleApiService
   ) {
+    // First make sure gapi is loaded can be in AppInitilizer
+    this.gapiService.onLoad().subscribe();
     this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
   }
 
@@ -50,8 +62,17 @@ export class AppComponent implements OnInit, AfterViewInit {
 
       navbarBtn.click(function(){
         $('#btnPlaylistToggle').toggle()
+        $('#user').toggle()
       });
     });
+  }
+
+  public isLoggedIn(): boolean {
+    return this.userService.isUserSignedIn();
+  }
+
+  public signIn() {
+    this.userService.signIn();
   }
 
   ngAfterViewInit() {
