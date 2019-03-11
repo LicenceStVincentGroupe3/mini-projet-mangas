@@ -1,8 +1,9 @@
+// Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-
+// Composants
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,14 +25,12 @@ import { VideoNamePipe } from './shared/pipes/video-name.pipe';
     AppComponent,
     SearchBarComponent,
     ListArticlesComponent,
+    VideoPlayerComponent,
+    VideosPlaylistComponent,
 
     VideoDurationPipe,
     VideoLikesViewsPipe,
-    VideoNamePipe,
-
-    VideoPlayerComponent,
-
-    VideosPlaylistComponent
+    VideoNamePipe
   ],
   imports: [
     BrowserModule,
