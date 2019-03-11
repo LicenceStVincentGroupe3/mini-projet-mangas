@@ -6,8 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { BarreRechercheComponent } from './barre-recherche/barre-recherche.component';
-import { ListeArticlesComponent } from './liste-articles/liste-articles.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { ListArticlesComponent } from './list-articles/list-articles.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
 import { VideosPlaylistComponent } from './videos-playlist/videos-playlist.component';
 // Services
@@ -22,8 +22,8 @@ import { VideoNamePipe } from './shared/pipes/video-name.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    BarreRechercheComponent,
-    ListeArticlesComponent,
+    SearchBarComponent,
+    ListArticlesComponent,
 
     VideoDurationPipe,
     VideoLikesViewsPipe,

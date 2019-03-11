@@ -2,11 +2,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { YoutubePlayerService } from '../shared/services/youtube-player.service';
 
 @Component({
-  selector: 'app-liste-articles',
-  templateUrl: './liste-articles.component.html',
-  styleUrls: ['./liste-articles.component.css']
+  selector: 'app-list-articles',
+  templateUrl: './list-articles.component.html',
+  styleUrls: ['./list-articles.component.css']
 })
-export class ListeArticlesComponent {
+export class ListArticlesComponent {
 
   @Input() videoList;
   @Input() loadingInProgress;

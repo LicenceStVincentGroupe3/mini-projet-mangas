@@ -3,11 +3,11 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { YoutubeApiService } from '../shared/services/youtube-api.service';
 
 @Component({
-  selector: 'app-barre-recherche',
-  templateUrl: './barre-recherche.component.html',
-  styleUrls: ['./barre-recherche.component.css']
+  selector: 'app-search-bar',
+  templateUrl: './search-bar.component.html',
+  styleUrls: ['./search-bar.component.css']
 })
-export class BarreRechercheComponent {
+export class SearchBarComponent {
 
   @Output() videosUpdated = new EventEmitter();
   @Input() loadingInProgress;

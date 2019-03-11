@@ -1,7 +1,5 @@
 import { Component, Input, AfterContentInit, Output, EventEmitter } from '@angular/core';
 import { YoutubePlayerService } from '../shared/services/youtube-player.service';
-import { NotificationService } from '../shared/services/notification.service';
-import { BrowserNotificationService } from '../shared/services/browser-notification.service';
 
 @Component({
   selector: 'app-video-player',

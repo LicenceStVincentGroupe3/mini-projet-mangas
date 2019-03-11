@@ -13,8 +13,8 @@
     </button>
 
     <div id="navbar" class="collapse navbar-collapse" id="navbarSupportedContent" data-role="navbar">
-      <app-barre-recherche (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress">
-      </app-barre-recherche>
+      <app-search-bar (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress">
+      </app-search-bar>
     </div>
     <div id="btnPlaylistToggle" aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button toggle-playlist-icon" (click)="togglePlaylist()">
       <i class="material-icons"></i>
@@ -37,8 +37,8 @@
 <section class="mdl-layout__content">
   <h2 class="list-title">Bon visionnage</h2>
   <div class="page-content" [ngClass]="{'blur-main-playlist-opened': playlistToggle}">
-    <app-liste-articles *ngIf="videoList.length" class="mdl-grid" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList" [loadingInProgress]="loadingInProgress">
-    </app-liste-articles>
+    <app-list-articles *ngIf="videoList.length" class="mdl-grid" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList" [loadingInProgress]="loadingInProgress">
+    </app-list-articles>
     <div class="loader" *ngIf="!videoList.length">
       <div class="loading"></div>
     </div>
