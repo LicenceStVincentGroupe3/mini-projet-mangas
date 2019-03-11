@@ -1,23 +1,65 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- Barre de recherche -->
+<section class="menu">
+  <!-- Barre de recherche -->
+  <nav class="navbar navbar-expand-lg navbar-light BG-LIGHT navbar-default navbar-fixed-top" id="myScrollspy">
+    <!-- Logo du site -->
+    <a class="collapse navbar-collapse" href="">
+      <img class="border rounded-circle border-danger" [src] = "imageLogo" alt="">
+    </a>
 
-<!-- propriete binding -->
-<app-display-infos [user]="user"></app-display-infos>
+    <!-- Bouton apparaissant lorsque la taille de l'écran de vient trop petite -->
+    <button id="btnNavbarToggle" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse" id="navbarSupportedContent" data-role="navbar">
+      <app-search-bar (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress">
+      </app-search-bar>
+    </div>
+    <div id="btnPlaylistToggle" aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button toggle-playlist-icon" (click)="togglePlaylist()">
+      <i class="material-icons"></i>
+    </div>
+  </nav>
+</section>
+<!-- Haut de page -->
+<section class="top-page">
+  <div class="container">
+    <div class="row">
+      <h1 class="top-page-mangas col-md-9 col-lg-9 mx-auto">MANGAS</h1>
+      <h2 class="top-page-animes col-md-3 col-lg-3 mx-auto">ANIMES</h2>
+    </div>
+  </div>
+</section>
+
+<app-videos-playlist [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist">
+</app-videos-playlist>
+
+<section class="mdl-layout__content">
+  <h2 class="list-title">Bon visionnage</h2>
+  <div class="page-content" [ngClass]="{'blur-main-playlist-opened': playlistToggle}">
+    <app-list-articles *ngIf="videoList.length" class="mdl-grid" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList" [loadingInProgress]="loadingInProgress">
+    </app-list-articles>
+    <div class="loader" *ngIf="!videoList.length">
+      <div class="loading"></div>
+    </div>
+  </div>
+</section>
+
+<app-video-player>
+</app-video-player>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 mx-auto">
+        <p>© 2019 ManA</p>
+      </div>
+
+      <div class="col-lg-9 mx-auto">
+        <p>Toutes les images et photos sont sous © Copyright donc la propriété de leurs auteurs et éditeurs respectifs.</p>
+      </div>
+    </div>
+  </div>
+</footer>
 

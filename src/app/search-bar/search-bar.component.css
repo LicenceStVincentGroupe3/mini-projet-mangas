@@ -1,0 +1,19 @@
+form {
+  text-align: center;
+}
+
+.search-icon:hover{
+  color: #ff7800;
+}
+
+.search-icon{
+  text-decoration: none;
+}
+
+::placeholder {
+  color: #3d3d3d;
+}
+
+[placeholder] {
+  color: #ff7800;
+}
