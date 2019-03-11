@@ -31,7 +31,7 @@ First,
 open the operating system command prompt
 
 To use the Angular application properly, you need to install:
-- http://Node.js is a JavaScript runtime environment : https://nodejs.org/en/
+- Node.js is a JavaScript runtime environment : https://nodejs.org/en/
 
 - Angular CLI which is a JavaScript framework, it is possible to install it with this command:
  ```
@@ -92,7 +92,7 @@ Les technologies utilisées durant le projet sont:
 Tout d'abord ouvrez l'invite de commande du système d'exploitation.
 
 Afin de pouvoir utiliser l'application Angular correctement, il est nécessaire d'installer :
-- http://Node.js qui est un environnement d'exécution JavaScript.
+- Node.js qui est un environnement d'exécution JavaScript.
 https://nodejs.org/en/
 
 - Angular CLI qui est un framework JavaScript, il est possible de l'installer via cette commande : 
